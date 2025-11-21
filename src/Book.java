@@ -46,6 +46,10 @@ public abstract class Book implements BookInterface {
         return cost;
     }
 
+    public String getBookType() {
+        return bookType;
+    }
+
     //This abstract class will be implemented in Printed and Audio books
     public abstract double getCost();
 
@@ -111,6 +115,14 @@ public abstract class Book implements BookInterface {
        for(int i = start; i < allBooks.size(); i++){
            System.out.println(allBooks.get(i));
        }
+    }
+
+
+    //This is used when
+    @Override
+    public String toString() {
+        return String.format("%s by %s (%s) | Cost: %.2f | Type: %s",
+                title, author, genre, getCost(), bookType);
     }
 
 
