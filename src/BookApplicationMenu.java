@@ -14,7 +14,7 @@ import java.util.Scanner;
  * per page.The last function of the program is to display the average of pages/length of printed/audio
  * books.
  * **/
-public class Main {
+public class BookApplicationMenu {
 
     private static Scanner scanner = new Scanner(System.in);
 
