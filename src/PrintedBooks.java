@@ -33,8 +33,7 @@ public class PrintedBooks extends Book {
      * The total pages is then divided by the size of the list and the
      * value is returned.
      * **/
-    public double printBooksAvgPages(){
-
+    public double getAveragePages(){
         double totalPages = 0.0;
         if (printedBooks.isEmpty()){
             return 0;
@@ -57,21 +56,19 @@ public class PrintedBooks extends Book {
      * the value is returned to the user.
      * **/
     public double getCost (){
-        double totalPages = 0.0;
-
-        if (printedBooks.isEmpty()){
-            return 0;
-        }
-
-        for (PrintedBooks pb : printedBooks){
-            totalPages += pb.getPages();
-        }
-        return totalPages*COST_PER_PAGE;
+        return pages*COST_PER_PAGE;
     }
 
 
 
-    public void getLastThreeBooks() {
+
+    /** getLastThreeBooks returns the last 3 printedBooks stored. First the method
+     *  checks to see if printedBooks is empty, and if it is it tells the user and ends.
+     * If the size is greater than 3, then the starting index is subtracted by three,
+     * other wise it starts at index 0. After that, the last 3 or less books is outputted.
+     * **/
+
+    public void displayLast3Printed() {
 
         int start = 0;
         if (printedBooks.size() <= 0){
@@ -84,7 +81,7 @@ public class PrintedBooks extends Book {
         }
 
         for(int i = start; i < printedBooks.size(); i++){
-            System.out.println(printedBooks.get(i));
+            System.out.println(printedBooks.get(i).toString());
         }
     }
 

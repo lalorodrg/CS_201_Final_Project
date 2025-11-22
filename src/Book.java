@@ -65,7 +65,7 @@ public abstract class Book implements BookInterface {
         double total = 0;
 
         for (int i = 0; i < allBooks.size(); i++) {
-            total += allBooks.get(i).getCost(); //Polymorphism
+            total += allBooks.get(i).getCost();
         }
         return total;
     }
@@ -73,7 +73,7 @@ public abstract class Book implements BookInterface {
 
     /** getGenreCount is inherited and implemented in Book since it has access to allBooks list.
      * The method goes through all of the Book objects stored in allBooks, where it compares the
-     * genre of the calling object to the object at each index, and if they are the same genre,
+     * genre of the calling object to the genre of the object at each index, and if they are the same genre,
      * the count is incremented and outputted after checking allBooks.
      * **/
     @Override
@@ -118,7 +118,7 @@ public abstract class Book implements BookInterface {
     }
 
 
-    //This is used when
+    //This is used when getLastXBooks is called to display the results easier.
     @Override
     public String toString() {
         return String.format("%s by %s (%s) | Cost: %.2f | Type: %s",
